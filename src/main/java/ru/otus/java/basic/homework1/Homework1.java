@@ -3,7 +3,7 @@ package ru.otus.java.basic.homework1;
 import java.util.Scanner;
 import java.util.Random;
 
-public class homework_1 {
+public class Homework1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
