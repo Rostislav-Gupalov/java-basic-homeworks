@@ -59,6 +59,7 @@ public class Homework3 {
         for (int i = 0; i < array.length; i++) {
             if (array[i].length < 2) {
                 sum = -1;
+                break;
             } else {
                 sum += array[i][1];
             }
