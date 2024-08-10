@@ -1,6 +1,5 @@
 package ru.otus.java.basic.homework3;
 
-import java.util.Arrays;
 
 public class Homework3 {
 
