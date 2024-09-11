@@ -2,10 +2,10 @@ package ru.otus.java.basic.homework5;
 
 public class Animal {
 
-    String name;
-    float runSpeed;
-    float swimSpeed;
-    int stamina;
+    protected String name;
+    protected float runSpeed;
+    protected float swimSpeed;
+    protected int stamina;
 
     public Animal(String name, int runSpeed, int swimSpeed, int stamina) {
         this.name = name;
@@ -18,14 +18,12 @@ public class Animal {
         int staminaRun = 1;
         float runTime = 0.0f;
         int distanceLeft = distance;
-        while ((stamina > 0) && (distanceLeft > 0)) {
-            stamina = stamina - staminaRun;
-            runTime = runTime + (1.0f / runSpeed);
-            distanceLeft = distanceLeft- 1;
+        while (stamina > 0 && distanceLeft > 0) {
+            stamina -= staminaRun;
+            runTime += (1.0f / runSpeed);
+            distanceLeft --;
         }
-        if (stamina > 0) {
-            System.out.println(name + " пробежал(-а) " + distance + " м за " + runTime + " с.");
-        } else if (distance == 0) {
+        if (distance ==0 || stamina > 0) {
             System.out.println(name + " пробежал(-а) " + distance + " м за " + runTime + " с.");
         } else {
             runTime = -1;
@@ -37,13 +35,12 @@ public class Animal {
         int staminaSwim = 2;
         float swimTime = 0.0f;
         int distanceLeft = distance;
-        while ((stamina > 0) && (distanceLeft > 0)) {
-            stamina = stamina - staminaSwim;
-            swimTime = swimTime + (1.0f/swimSpeed);
-            distanceLeft = distanceLeft- 1;
-        } if (stamina > 0) {
-            System.out.println(name + " проплыл(-а) " + distance + " м за " + swimTime + " с.");
-        } else if (distance == 0) {
+        while (stamina > 0 && distanceLeft > 0) {
+            stamina -= staminaSwim;
+            swimTime += (1.0f/swimSpeed);
+            distanceLeft --;
+        }
+        if (distance==0 || stamina > 0) {
             System.out.println(name + " проплыл(-а) " + distance + " м за " + swimTime + " с.");
         } else {
             swimTime = -1;
