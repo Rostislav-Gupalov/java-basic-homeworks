@@ -10,6 +10,10 @@ public class Plate {
         return foodCurrent;
     }
 
+    public void setFoodCurrent(int foodCurrent) {
+        this.foodCurrent = foodCurrent;
+    }
+
     public Plate(int foodMax) {
         this.foodMax = foodMax;
         this.foodCurrent = foodMax;
