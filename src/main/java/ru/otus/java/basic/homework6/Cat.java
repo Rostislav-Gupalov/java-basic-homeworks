@@ -13,20 +13,16 @@ public class Cat {
     }
 
     public void eat(Plate plate) {
-        int foodCurrent = plate.getFoodCurrent();
-        String name = this.name;
-            int appetite = this.appetite;
-            if (!this.wellFed) {
-                if (foodCurrent >= appetite) {
-                    foodCurrent -= appetite;
-                    System.out.println(name + " поел. Оставшееся количество еды в тарелке - " + foodCurrent);
-                    this.wellFed = true;
-                } else {
-                    System.out.println("В тарелке недостаточно еды, чтоб накормить " + name + "а");
-                }
+        if (!this.wellFed) {
+            if (plate.getFoodCurrent() >= appetite) {
+                plate.takeFood(appetite);
+                System.out.println(name + " поел. Оставшееся количество еды в тарелке - " + plate.getFoodCurrent());
+                this.wellFed = true;
             } else {
-                System.out.println(name + " уже сыт.");
+                System.out.println("В тарелке недостаточно еды, чтоб накормить " + name + "а");
             }
-        plate.setFoodCurrent(foodCurrent);
+        } else {
+            System.out.println(name + " уже сыт.");
         }
     }
+}

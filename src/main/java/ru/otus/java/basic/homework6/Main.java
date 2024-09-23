@@ -2,7 +2,7 @@ package ru.otus.java.basic.homework6;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Plate plate = new Plate(30);
         plate.addFood(5);
         System.out.println(plate.takeFood(20));

@@ -28,8 +28,8 @@ public class Plate {
     }
 
     public boolean takeFood(int food) {
-        foodCurrent -= food;
-        if (foodCurrent >= 0) {
+        if (foodCurrent >= food) {
+            foodCurrent -= food;
             System.out.println("Взято еды - " + food + ". Количество оставшейся еды в тарелке - " + foodCurrent);
             return true;
         } else {
