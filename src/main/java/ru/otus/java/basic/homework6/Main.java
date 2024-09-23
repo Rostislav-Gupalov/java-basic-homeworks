@@ -16,6 +16,4 @@ public class Main {
             cats[i].eat(plate);
         }
     }
-
-
 }
