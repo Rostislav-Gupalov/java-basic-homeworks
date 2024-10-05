@@ -17,7 +17,7 @@ public class Application {
         Employee employee3 = new Employee("Андрей", 27);
         List<Employee> list2 = Arrays.asList(employee1, employee2, employee3);
         returnNamesList(list2);
-        checkAge(list2, 26);
+        getEmployeesOlderThan(list2, 26);
         checkAverageAge(list2, 45);
         theYoungestEmployee(list2);
     }
@@ -25,8 +25,8 @@ public class Application {
     public static List<Integer> minMaxArrayList(int min, int max) {
         List<Integer> list = new ArrayList<>();
         list.add(min);
-        for (int i = 0; i < (max - min); i++) {
-            list.add(min + i + 1);
+        for (int i = min; i <= max; i++) {
+            list.add(i);
         }
         System.out.println(list);
         return list;
@@ -66,7 +66,7 @@ public class Application {
         return nameList;
     }
 
-    public static List<Employee> checkAge(List<Employee> list, int minAge) {
+    public static List<Employee> getEmployeesOlderThan(List<Employee> list, int minAge) {
         List<Employee> minAgeList = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getAge() >= minAge) {
