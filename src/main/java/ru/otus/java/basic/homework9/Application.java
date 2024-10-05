@@ -24,7 +24,6 @@ public class Application {
 
     public static List<Integer> minMaxArrayList(int min, int max) {
         List<Integer> list = new ArrayList<>();
-        list.add(min);
         for (int i = min; i <= max; i++) {
             list.add(i);
         }
