@@ -1,4 +1,4 @@
-package ru.otus.java.basic.homework12;
+/*package ru.otus.java.basic.homework12;
 
 import java.io.FilenameFilter;
 import java.io.File;
@@ -14,5 +14,5 @@ public class MyFileNameFilter implements FilenameFilter {
     public boolean accept(File dir, String name) {
         return name.toLowerCase().endsWith(ext);
     }
-}
+}*/
 

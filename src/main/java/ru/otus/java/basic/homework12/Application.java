@@ -8,7 +8,7 @@ import java.io.FileOutputStream;
 import java.io.BufferedOutputStream;
 
 
-public class Application {
+/*public class Application {
 
     public static void main(String[] args) {
         start();
@@ -62,4 +62,4 @@ public class Application {
                 out.write(buffer[i]);
             }
     }
-}
+}*/
