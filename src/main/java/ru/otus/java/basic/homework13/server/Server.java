@@ -17,6 +17,9 @@ public class Server {
         DataInputStream input = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
         DataOutputStream output = new DataOutputStream(new BufferedOutputStream(socket.getOutputStream()));
 
+        String operators = "Доступные операторы: + - * /.\nВведите два числа и оператор через пробел так, чтобы оператор был между числами";
+        output.writeUTF(operators);
+        output.flush();
         String str = input.readUTF();
         String[] inputs = str.split(" ");
         if (inputs[1].equals ("+")) {

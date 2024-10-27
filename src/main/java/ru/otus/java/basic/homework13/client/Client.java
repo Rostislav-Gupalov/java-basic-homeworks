@@ -12,8 +12,7 @@ public class Client {
             PingClient client = new PingClient(socket);
 
         ) {
-            System.out.println("Доступные операторы: + - * /");
-            System.out.println("Введите два числа и оператор через пробел так, чтобы оператор был между числами.");
+            System.out.println(client.read());
             String userInput = scanner.nextLine();
             client.send(userInput);
             System.out.println(client.read());
