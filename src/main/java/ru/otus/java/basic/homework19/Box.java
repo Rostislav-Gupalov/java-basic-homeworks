@@ -1,18 +1,19 @@
 package ru.otus.java.basic.homework19;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
+import static java.util.Collections.addAll;
 import static java.util.Collections.copy;
 
 public class Box<T extends Fruit> {
 
     private List<T> fruits;
-    private double weight;
+    //private double weight;
 
     public Box() {
         this.fruits = new ArrayList<>();
-        weight = 0;
     }
 
     public void putFruit(T fruit) {
@@ -20,20 +21,21 @@ public class Box<T extends Fruit> {
     }
 
     public double weight() {
-        for (T fruit : fruits) this.weight += fruit.getWeight();
+        double weight = 0;
+        for (T fruit : fruits) weight += fruit.getWeight();
         return weight;
     }
 
     public boolean compare(Box<?> anotherBox) {
-        if (this.weight() == anotherBox.weight()) {   //если сравнивать методы, возвращает true, но если сравнить метод и
-            // поле weight, возвращает false. Почему так,
+        if (Math.abs(this.weight() - anotherBox.weight()) < 0.0001) {
             return true;
-        }
-        else return false;
+        } else return false;
     }
 
     public void transfer(Box<? super T> anotherBox) {
-        copy(anotherBox.fruits, this.fruits);
-        for (T fruit : fruits) fruits.remove(fruit);
+        if (this != anotherBox) {
+            anotherBox.fruits.addAll(fruits);
+            this.fruits.clear();
+        } else System.out.println("Пересыпать фрукты можно только в другую коробку");
     }
 }

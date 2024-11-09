@@ -20,13 +20,12 @@ public class Application {
 
         System.out.println(appleBox.compare(fruitBox));
 
-        /*fruitBox.transfer(appleBox); // Метод PECS не позволяет пересыпать из fruitBox в appleBox и orangeBox
-        fruitBox.transfer(orangeBox);*/  // , т.к. dest подразумевает <? super Fruit>
-        fruitBox.transfer(fruitBox);
-        fruitBox.transfer(fruitBox);
         appleBox.transfer(appleBox);
-        appleBox.transfer(fruitBox);
         orangeBox.transfer(orangeBox);
+        appleBox.transfer(fruitBox);
         orangeBox.transfer(fruitBox);
+
+        /*Метод PECS не позволяет пересыпать из fruitBox в appleBox и orangeBox,
+        т.к. dest подразумевает <? super Fruit>*/
     }
 }
