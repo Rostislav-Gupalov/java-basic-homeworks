@@ -9,14 +9,13 @@ public class InMemoryAuthenticationProvider implements AuthenticatedProvider {
     private Server server;
     private UsersJdbc usersJdbc;
     private List<User> users;
-    int id;
+    private String usernames;
 
     public InMemoryAuthenticationProvider(Server server) throws SQLException {
         this.server = server;
         this.usersJdbc = new UsersJdbc();
         this.users = new ArrayList<>();
-        users = usersJdbc.getAll();
-        this.id = users.toArray().length + 1;
+        users.addAll(usersJdbc.getAll());
     }
 
     @Override
@@ -25,7 +24,7 @@ public class InMemoryAuthenticationProvider implements AuthenticatedProvider {
     }
 
     private String getUsernameByLoginAndPassword(String login, String password) {
-        for (User user : usersJdbc.getAll()) {
+        for (User user : users) {
             if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
                 return user.getUsername();
             }
@@ -34,7 +33,7 @@ public class InMemoryAuthenticationProvider implements AuthenticatedProvider {
     }
 
     private String getRoleByLoginAndPassword(String login, String password) {
-        for (User user : usersJdbc.getAll()) {
+        for (User user : users) {
             if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
                 return user.getRole();
             }
@@ -63,7 +62,7 @@ public class InMemoryAuthenticationProvider implements AuthenticatedProvider {
     }
 
     private boolean isLoginAlreadyExist(String login) {
-        for (User user : usersJdbc.getAll()) {
+        for (User user : users) {
             if (user.getLogin().equals(login)) {
                 return true;
             }
@@ -72,7 +71,7 @@ public class InMemoryAuthenticationProvider implements AuthenticatedProvider {
     }
 
     private boolean isUsernameAlreadyExist(String username) {
-        for (User user : usersJdbc.getAll()) {
+        for (User user : users) {
             if (user.getUsername().equals(username)) {
                 return true;
             }
@@ -96,12 +95,15 @@ public class InMemoryAuthenticationProvider implements AuthenticatedProvider {
             clientHandler.sendMessage("Указанное имя пользователя уже занято");
             return false;
         }
+        int id = users.size() + 1;
         users.add(new User(id, login, password, username, role));
-        id++;
         clientHandler.setUsername(username);
         server.subscribe(clientHandler);
         clientHandler.sendMessage("/regok " + username);
 
         return true;
     }
+
+
+
 }

@@ -3,10 +3,11 @@ CREATE TABLE users_list (
 	login varchar(100) NOT NULL,
 	password varchar(100) NOT NULL,
 	username varchar(100) NOT NULL,
+	role varchar(100) NOT NULL,
 	CONSTRAINT users_un_login UNIQUE(login),
 	CONSTRAINT users_un_username UNIQUE(username)
 );
 
-insert into users_list(id, login, password, username) VALUES (1, 'login1', 'password1', 'username1', 'ADMIN');
-insert into users_list(id, login, password, username) VALUES (2, 'login2', 'password2', 'username2', 'USER');
-insert into users_list(id, login, password, username) VALUES (3, 'login3', 'password3', 'username3', 'USER');
+insert into users_list(id, login, password, username, role) VALUES (1, 'login1', 'password1', 'username1', 'ADMIN');
+insert into users_list(id, login, password, username, "role") VALUES (2, 'login2', 'password2', 'username2', 'USER');
+insert into users_list(id, login, password, username, "role") VALUES (3, 'login3', 'password3', 'username3', 'USER');
