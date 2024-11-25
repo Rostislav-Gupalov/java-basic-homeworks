@@ -1,6 +1,6 @@
 package ru.otus.java.basic.finalproject.commands;
 
-import ru.otus.java.basic.finalproject.Application;
+
 import ru.otus.java.basic.finalproject.Command;
 
 import static ru.otus.java.basic.finalproject.Application.getCurrentDirectory;

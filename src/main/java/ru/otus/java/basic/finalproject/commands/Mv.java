@@ -1,6 +1,5 @@
 package ru.otus.java.basic.finalproject.commands;
 
-import ru.otus.java.basic.finalproject.Application;
 import ru.otus.java.basic.finalproject.Command;
 
 import java.io.File;

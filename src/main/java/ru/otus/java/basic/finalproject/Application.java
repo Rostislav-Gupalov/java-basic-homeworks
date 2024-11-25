@@ -1,12 +1,9 @@
 package ru.otus.java.basic.finalproject;
 
-import ru.otus.java.basic.finalproject.commands.*;
 
 import java.io.IOException;
-import java.io.UncheckedIOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 

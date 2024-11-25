@@ -5,7 +5,6 @@ import ru.otus.java.basic.finalproject.Command;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import static ru.otus.java.basic.finalproject.Application.*;

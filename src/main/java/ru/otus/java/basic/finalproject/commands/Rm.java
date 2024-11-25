@@ -1,20 +1,16 @@
 package ru.otus.java.basic.finalproject.commands;
 
-import ru.otus.java.basic.finalproject.Application;
 import ru.otus.java.basic.finalproject.AuxiliaryMethods;
 import ru.otus.java.basic.finalproject.Command;
 
 import java.io.File;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.io.IOException;
-import java.util.Objects;
-import java.util.stream.Stream;
 
-import static org.apache.logging.log4j.core.util.Assert.isEmpty;
+
 import static ru.otus.java.basic.finalproject.Application.*;
 import static ru.otus.java.basic.finalproject.AuxiliaryMethods.getInputAfterCommand;
-import static ru.otus.java.basic.finalproject.AuxiliaryMethods.parse;
+
 
 public class Rm extends Command {
 

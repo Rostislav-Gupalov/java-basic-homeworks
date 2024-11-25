@@ -8,7 +8,6 @@ import java.io.UncheckedIOException;
 import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Stream;
 
 import static ru.otus.java.basic.finalproject.Application.getCurrentDirectory;
